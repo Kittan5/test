@@ -15,8 +15,13 @@ module.exports = (player) => {
                 armour: armour,
                 x,
                 y,
-                z}});
-
+                z}}
+                , (err, result) => {
+                    console.log(err);
+                    console.log(result)
+                    return;
+                });
+                
             player.isAuth = null;
         }
         else{console.log('Вы не вошли')}
