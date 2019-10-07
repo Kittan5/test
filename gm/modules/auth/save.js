@@ -9,14 +9,13 @@ module.exports = (player) => {
             let money = player.getVariable('money');
             let health = player.health;
             let name = player.name;
-            User.updateMany({login: name },{ $set: { 
+            User.updateMany({login: name },{  
                 money: money,
                 health: health,
                 armour: armour,
-                x,
-                y,
-                z}}
-                , (err, result) => {
+                cords: {x:cords.x,y:cords.y,z:cords.z}
+                },
+                (err, result) => {
                     console.log(err);
                     console.log(result)
                     return;

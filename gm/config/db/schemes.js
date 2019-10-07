@@ -30,6 +30,16 @@ let user = new mongoose.Schema({
     }
 });
 
+let points = new mongoose.Schema({
+    point: {
+        type: String,
+    },
+    cords: {
+        type: Object,
+    }
+})
+
 module.exports = {
-    user
+    user,
+    points
 };

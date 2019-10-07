@@ -2,6 +2,7 @@ let mongodb = require(ROOT +'/config/db/mongodb');
 let register = require(ROOT + '/modules/auth/register');
 let login = require(ROOT + '/modules/auth/login');
 let save = require(ROOT +'/modules/auth/save');
+let savepoint = require(ROOT +'/modules/auth/save')
 
 let User = mongodb.getUserModel();
 
@@ -16,5 +17,8 @@ module.exports = {
     },
     save: (player) => {
         save(player)
-    }
+    },
+    savepoint: (player, fullText, point) => {
+        savepoint(player, fullText, point)
+    } 
 };
